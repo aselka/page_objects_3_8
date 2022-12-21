@@ -63,7 +63,6 @@ def set_subjects(subject):
 
 
 def set_state(value):
-    browser.element('#state').perform(command.js.scroll_into_view)
     dropdown.select(browser.element('#state'), value)
 
 
