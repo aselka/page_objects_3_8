@@ -10,7 +10,7 @@ def test_submit_student_registration_form():
     registration_form.set_email('test@gmail.com')
     registration_form.set_gender('Female')
     registration_form.set_phone_number('1234567890')
-    registration_form.set_date_of_birth(day='24', month='5', year='1995')
+    registration_form.set_birthday('5', '1995', '24')
     registration_form.set_subjects('Computer Science')
     registration_form.set_hobbies('Reading')
     registration_form.picture_upload('resourses/foto.jpg')

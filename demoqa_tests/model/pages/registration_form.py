@@ -3,7 +3,7 @@ import os
 from selene import have, command
 from selene.support.shared import browser
 from demoqa_tests.model import controls
-from demoqa_tests.model.controls import dropdown, modal
+from demoqa_tests.model.controls import dropdown, modal, datepicker, checkbox, radiobutton
 
 state = browser.element('#state')
 
@@ -28,22 +28,15 @@ def set_email(value):
 
 
 def set_gender(gender):
-    browser.all('[for^=gender-radio]').by(
-        have.exact_text(gender)
-    ).first.click()
+    radiobutton.set_value(browser.all('[name=gender]'), gender)
 
 
 def set_phone_number(value):
     browser.element('#userNumber').type(value)
 
 
-def set_date_of_birth(*, month, year, day):
-    browser.element('#dateOfBirthInput').click()
-    browser.element('.react-datepicker__month-select').click()
-    browser.element(f'[value="{month}"]').click()
-    browser.element('.react-datepicker__year-select').click()
-    browser.element(f'[value="{year}"]').click()
-    browser.element(f'.react-datepicker__day--0{day}').click()
+def set_birthday(month, year, day):
+    datepicker.set_birthday_date(month, year, day)
 
 
 def picture_upload(value):
@@ -55,7 +48,7 @@ def set_address(value):
 
 
 def set_hobbies(hobby):
-    browser.all('[for^=hobbies-checkbox]').element_by(have.text(hobby)).click()
+    checkbox.checkboxes_click(browser.all('[for^=hobbies-checkbox]'), hobby)
 
 
 def set_subjects(subject):
