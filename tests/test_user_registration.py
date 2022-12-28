@@ -13,7 +13,7 @@ def test_submit_student_registration_form():
     registration_form.set_birthday('5', '1995', '24')
     registration_form.set_subjects('Computer Science')
     registration_form.set_hobbies('Reading')
-    registration_form.picture_upload('resourses/foto.jpg')
+    registration_form.picture_upload('resources/foto.jpg')
     registration_form.set_address('Saratovskaya 19')
     registration_form.scroll_to_bottom()
     registration_form.set_state('NCR')

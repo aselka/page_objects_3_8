@@ -4,6 +4,7 @@ from selene import have, command
 from selene.support.shared import browser
 from demoqa_tests.model import controls
 from demoqa_tests.model.controls import dropdown, modal, datepicker, checkbox, radiobutton
+from demoqa_tests.utils import path
 
 state = browser.element('#state')
 
@@ -39,8 +40,8 @@ def set_birthday(month, year, day):
     datepicker.set_birthday_date(month, year, day)
 
 
-def picture_upload(value):
-    browser.element('#uploadPicture').send_keys(os.path.abspath(value))
+def picture_upload(path_to_pic):
+    path.create_path('#uploadPicture', path_to_pic)
 
 
 def set_address(value):

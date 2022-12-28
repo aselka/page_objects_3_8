@@ -3,6 +3,7 @@ import os
 import tests
 
 
-def upload_picture(element, file):
+def create_path(element, file):
     browser.element(element).set_value(
-        os.path.abspath(os.path.join(os.path.dirname(tests.__file__), os.path.pardir, file)))
+        os.path.abspath(os.path.join(os.path.dirname(tests.__file__), file))
+    )
